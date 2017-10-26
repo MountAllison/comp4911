@@ -91,8 +91,8 @@ def myNetwork():
     # Run an instance of bird (configured to use OSPF) on each router.
     info('*** Starting bird routing daemons\n')
     r2.cmd('sleep 1')
-    r1.cmd('bird -c bird-r1.conf -s /var/run/bird/bird-r1.ctl')
-    r2.cmd('bird -c bird-r2.conf -s /var/run/bird/bird-r2.ctl')
+    r1.cmd('bird -c bird-r1.conf -s /var/run/bird-r1.ctl')
+    r2.cmd('bird -c bird-r2.conf -s /var/run/bird-r2.ctl')
 
     # Start the CLI
     CLI(net)
@@ -100,8 +100,8 @@ def myNetwork():
     # We need to shut down bird cleanly before Mininet shutsdown.
     # If it fails, use 'sudo kill -9 <pid>' to kill left-over processes.
     info('*** Shutting down bird daemons\n')
-    r1.cmd('echo down | birdc -s /run/bird/bird-r1.ctl')
-    r2.cmd('echo down | birdc -s /run/bird/bird-r2.ctl')
+    r1.cmd('echo down | birdc -s /var/run/bird-r1.ctl')
+    r2.cmd('echo down | birdc -s /var/run/bird-r2.ctl')
     net.stop()
 
 if __name__ == '__main__':
