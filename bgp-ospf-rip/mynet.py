@@ -1,9 +1,12 @@
 #!/usr/bin/python
 
-# as.py
+# mynet.py
 
-# Requires the bird routing daemon.
-# Install with: 'sudo apt install bird'
+# Mininet exmaple topology with an AS using OSPF and another using RIP,
+# and BGP to route between them.
+
+# Requires the Quagga routing suite.
+# Install with: 'sudo apt install quagga'
 
 # Initial code generated with Miniedit (~mininet/mininet/examples/miniexit.py)
 
@@ -82,7 +85,6 @@ def myNetwork():
     net.build()
 
     # Configure AS65001 routers
-    # Run an instance of bird (configured to use OSPF) on each router.
     info('*** Starting zebra routing daemons\n')
     time.sleep(1)
 
