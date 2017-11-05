@@ -8,5 +8,5 @@ fi
 R=$1
 
 echo "Starting ospfd on ${R}"
-/usr/local/sbin/ospfd -f ospfd-${R}.conf -d \
+/usr/lib/quagga/ospfd -f ospfd-${R}.conf -d \
   -i /tmp/ospfd-${R}.pid -z /tmp/zserv-${R}.api

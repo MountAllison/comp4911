@@ -8,5 +8,5 @@ fi
 R=$1
 
 echo "Starting ripd on ${R}"
-/usr/local/sbin/ripd -f ripd-${R}.conf -d \
+/usr/lib/quagga/ripd -f ripd-${R}.conf -d \
   -i /tmp/ripd-${R}.pid -z /tmp/zserv-${R}.api

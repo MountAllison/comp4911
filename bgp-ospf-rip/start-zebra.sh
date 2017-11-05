@@ -8,5 +8,5 @@ fi
 R=$1
 
 echo "Starting zebra on ${R}"
-/usr/local/sbin/zebra -f zebra-${R}.conf -d \
+/usr/lib/quagga/zebra -f zebra-${R}.conf -d \
   -i /tmp/zebra-${R}.pid -z /tmp/zserv-${R}.api

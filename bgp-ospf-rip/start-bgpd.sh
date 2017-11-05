@@ -8,5 +8,5 @@ fi
 R=$1
 
 echo "Starting bgpd on ${R}"
-/usr/local/sbin/bgpd -f bgpd-${R}.conf -d \
+/usr/lib/quagga/bgpd -f bgpd-${R}.conf -d \
    -i /tmp/bgpd-${R}.pid -z /tmp/zserv-${R}.api
